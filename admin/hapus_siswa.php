@@ -1,8 +1,5 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 $id = (int)$_GET['id'];
 
 $sql = ("DELETE FROM siswa WHERE id = $id");
@@ -13,7 +10,7 @@ if ($result) {
     header("Location: ?page=siswa");
 
 } else {
-    $error = "ERROR :" . $conn->error;
+    $error = "ERROR :" . $koneksi->error;
 }
 
 ?>
