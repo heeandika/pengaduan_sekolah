@@ -7,5 +7,6 @@
 </head>
 <body>
     <h1>ERROR :Halaman tidak ditemukan</h1>
+    <p>Maaf, halaman yang Anda cari tidak dapat ditemukan.</p>
 </body>
 </html>
