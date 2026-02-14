@@ -52,13 +52,14 @@
 <body>
     <div class="sidebar">
         <div>
-            <h2 class="logo">Siswa</h2>
+            <h2 class="logo">Admin</h2>
         </div>
 
         <div class="menu">
             <a href="?page=aspirasi">Asprasi</a>
             <a href="?page=siswa">Siswa</a>
             <a href="?page=kategori">Kategori</a>
+            <a href="?page=logout" style="color: red;">Logout</a>
         </div>
     </div>
 

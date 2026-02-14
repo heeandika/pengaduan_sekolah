@@ -174,8 +174,7 @@ $hasil = $koneksi->query("SELECT * FROM siswa");
                 echo "<td>" . $row["kelas"] . "</td>";
                 echo "<td>
                 <a href='?page=siswa&id=" . $row["id"] . "' class='btn btn-ubah'>Ubah</a> |
-                <a href='?page=hapus_siswa&id=" . $
-                ["id"] . "' class='btn btn-hapus' onclick=\"return confirm('Yakin?')\">Hapus</a>
+                <a href='?page=hapus_siswa&id=" . $row["id"] . "' class='btn btn-hapus' onclick=\"return confirm('Yakin?')\">Hapus</a>
                 </td>";
                 echo "</tr>";
                 $no++;

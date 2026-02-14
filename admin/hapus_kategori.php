@@ -10,6 +10,6 @@ if ($result) {
     header("Location: ?page=kategori");
 
 } else {
-    $error = "ERROR :" . $koneksi->error;
+    $error = "ERROR:" . $koneksi->error;
 }
 ?>

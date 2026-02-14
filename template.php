@@ -10,7 +10,6 @@
     body {
         display: flex;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
-        background-color: #a5a5a5;
         display: grid;
         /* Membuat 3 kolom: sidebar (200px), konten (sisa ruang), sidebar (200px) */
         grid-template-columns: 1fr 5fr;
