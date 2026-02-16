@@ -12,60 +12,11 @@ $hasil = $koneksi->query("SELECT * FROM siswa");
     <title>Siswa</title>
 </head>
 <style>
-    label {
-        display: inline;
-        width: 100px;
-        margin-top: 10px;
-    }
 
-    input {
-        width: 40%;
-        padding: 8px;
-        margin-top: 5px;
-        box-sizing: border-box;
-    }
-
-    button {
-        margin-top: 10px;
-        padding: 10px 15px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        cursor: pointer;
-    }
-
-    button:hover {
-        background-color: #45a049;
-    }
     table {
         margin-top: 20px;
         border-collapse: collapse;
         width: 100%;
-    }
-    th, td {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: left;
-    }
-
-    th {
-        background-color: #f2f2f2;
-    }
-
-    .btn-ubah {
-        color: white;
-        background-color: #4CAF50;
-        padding: 5px 10px;
-        text-decoration: none;
-        border-radius: 3px;
-    }
-
-    .btn-hapus {
-        color: white;
-        background-color: #f44336;
-        padding: 5px 10px;
-        text-decoration: none;
-        border-radius: 3px;
     }
 
 </style>
@@ -173,8 +124,8 @@ $hasil = $koneksi->query("SELECT * FROM siswa");
                 echo "<td>" . $row["NIS"] . "</td>";
                 echo "<td>" . $row["kelas"] . "</td>";
                 echo "<td>
-                <a href='?page=siswa&id=" . $row["id"] . "' class='btn btn-ubah'>Ubah</a> |
-                <a href='?page=hapus_siswa&id=" . $row["id"] . "' class='btn btn-hapus' onclick=\"return confirm('Yakin?')\">Hapus</a>
+                <a href='?page=siswa&id=" . $row["id"] . "'>Ubah</a> |
+                <a href='?page=hapus_siswa&id=" . $row["id"] . "' onclick=\"return confirm('Yakin?')\">Hapus</a>
                 </td>";
                 echo "</tr>";
                 $no++;

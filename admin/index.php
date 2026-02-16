@@ -35,6 +35,10 @@ if (isset($_GET['page'])) {
             $content = "logout.php";
             break;
 
+        case 'edit_aspirasi':
+            $content = "edit_aspirasi.php";
+            break;
+
         default:
             include "../404.php";
             break;

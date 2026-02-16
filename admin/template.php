@@ -11,42 +11,29 @@
         display: flex;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         display: grid;
-        /* Membuat 2 kolom: sidebar (200px), konten (sisa ruang), sidebar (200px) */
+        /* Membuat 3 kolom: sidebar (200px), konten (sisa ruang), sidebar (200px) */
         grid-template-columns: 1fr 5fr;
         min-height: 100vh;
         /* Memastikan grid memenuhi tinggi layar */
         gap: 10px;
         /* Jarak antar area */
         margin: 0;
-
     }
 
-    .logo {
-        text-align: center;
-        padding: 20px;
-        border-bottom: 2px solid black
+    .menu a {
+        display: block;
+        margin-bottom: 10px;
+        text-decoration: none;
+        color: #007efc;
     }
 
     .sidebar {
-        background-color: #180032;
-        color: white;
-        height: 100vh;
+        background-color: #f4f4f4;
         padding: 20px;
     }
 
-    .sidebar a {
-        display: block;
-        color: white;
-        padding: 12px 20px;
-        text-decoration: none;
-        border-left: 5px solid transparent;
-    }
 
-    .sidebar a:hover {
-        background-color: #89e0ff;
-        border-left: 5px solid #323232;
-        color: black;
-        }
+
 </style>
 
 <body>
