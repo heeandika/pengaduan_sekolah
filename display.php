@@ -39,6 +39,7 @@
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
             echo "<td>" . $no++ . "</td>";
+            echo "<td>" . $row['id_pelaporan'] . "</td>";
             echo "<td>" . $row['NIS'] . "</td>";
             echo "<td>" . $row['id_kategori'] . "</td>";
             echo "<td>" . $row['lokasi'] . "</td>";
