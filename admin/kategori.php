@@ -38,12 +38,15 @@ $hasil = $koneksi->query("SELECT * FROM kategori");
     button:hover {
         background-color: #45a049;
     }
+
     table {
         margin-top: 20px;
         border-collapse: collapse;
         width: 100%;
     }
-    th, td {
+
+    th,
+    td {
         border: 1px solid #ddd;
         padding: 8px;
         text-align: left;
@@ -68,10 +71,10 @@ $hasil = $koneksi->query("SELECT * FROM kategori");
         text-decoration: none;
         border-radius: 3px;
     }
-
 </style>
+
 <body>
-<h2>Data kategori</h2>
+    <h2>Data kategori</h2>
     <?php
     $id_kategori = "";
     $ket_kategori = "";
@@ -80,7 +83,7 @@ $hasil = $koneksi->query("SELECT * FROM kategori");
 
         $id    = $_POST['id'] ?? "";
         $Ket_kategori = $_POST['ket_kategori'];
-
+        
         if (empty($Ket_kategori)) {
 
             $error = "Semua Data Harus Diisi!!";
@@ -132,6 +135,22 @@ $hasil = $koneksi->query("SELECT * FROM kategori");
         $ket_kategori   = $data['ket_kategori'];
     }
     ?>
+    <?php
+    if (isset($_GET['action']) && $_GET['action'] === 'delete' && isset($_GET['id'])) {
+
+        $id = (int)$_GET['id'];
+    
+        $sql = ("DELETE FROM kategori WHERE id_kategori = $id");
+    
+        $result =  $koneksi->query($sql);
+        var_dump($result);
+        if ($result) {
+            header("Location: ?page=kategori");
+        } else {
+            $error = "ERROR:" . $koneksi->error;
+        }
+    }
+    ?>
 
     <!-- form tambah & ubah -->
     <form action="" method="post">
@@ -166,7 +185,7 @@ $hasil = $koneksi->query("SELECT * FROM kategori");
                 echo "<td>" . $row["ket_kategori"] . "</td>";
                 echo "<td>
                 <a href='?page=kategori&id=" . $row["id_kategori"] . "' class='btn btn-ubah'>Ubah</a> |
-                <a href='?page=hapus_kategori&id=" . $row["id_kategori"] . "' class='btn btn-hapus' onclick=\"return confirm('Yakin?')\">Hapus</a>
+                <a href='?page=kategori&action=delete&id=" . $row["id_kategori"] . "' class='btn btn-hapus' onclick=\"return confirm('Yakin?')\">Hapus</a>
                 </td>";
                 echo "</tr>";
                 $no++;

@@ -26,6 +26,9 @@
             <th>Kategori</th>
             <th>Lokasi</th>
             <th>Keterangan</th>
+            <th>Status</th>
+            <th>Feedback</th>
+            <th>Tanggal</th>
             <th>Aksi</th>
         </tr>
         
@@ -34,12 +37,17 @@
         // Query dengan JOIN untuk menampilkan nama kategori
         $result = $koneksi->query("
             SELECT 
+                inp_aspirasi.id_pelaporan,
                 inp_aspirasi.NIS,
                 inp_aspirasi.lokasi,
                 inp_aspirasi.ket,
-                ket_kategori as nama_kategori
+                ket_kategori as nama_kategori,
+                aspirasi.status,
+                aspirasi.feedback,
+                aspirasi.tanggal
             FROM inp_aspirasi
             LEFT JOIN kategori ket_kategori ON inp_aspirasi.id_kategori = ket_kategori.id_kategori
+            LEFT JOIN aspirasi ON inp_aspirasi.id_pelaporan = aspirasi.id_pelaporan
             ORDER BY inp_aspirasi.id_pelaporan DESC
         ");
         
@@ -52,7 +60,10 @@
                 echo "<td>" . $row['nama_kategori'] . "</td>";
                 echo "<td>" . $row['lokasi'] . "</td>";
                 echo "<td>" . $row['ket'] . "</td>";
-                echo "<td><a href='?page=edit_aspirasi&nis=" . $row['NIS'] . "'>Detail</a> </td>";
+                echo "<td>" . $row['status'] . "</td>";
+                echo "<td>" . $row['feedback'] . "</td>";
+                echo "<td>" . $row['tanggal'] . "</td>";
+                echo "<td><a href='?page=detail&id=" . $row['id_pelaporan'] . "'>Detail</a> </td>";
                 echo "</tr>";
             }
         } else {
